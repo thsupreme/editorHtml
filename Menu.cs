@@ -10,11 +10,13 @@ namespace editorHtml
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
 
             DrawScreen();
             WriteOptions();
 
-            var options = short.Parse(Console.ReadLine());
+            var options = short.Parse(Console.ReadLine()!);
+            HandleMenuOption(options);
         }
 
         public static void DrawScreen()
@@ -54,13 +56,39 @@ namespace editorHtml
             Console.SetCursorPosition(3, 4);
             Console.WriteLine("Selecione uma opção abaixo!");
             Console.SetCursorPosition(3, 6);
-            Console.WriteLine("1 - Novo arquivo");
+            Console.WriteLine("1 - Novo Aqruivo");
             Console.SetCursorPosition(3, 7);
             Console.WriteLine("2 - Abrir");
             Console.SetCursorPosition(3, 9);
             Console.WriteLine("0 - Sair");
             Console.SetCursorPosition(3, 10);
             Console.Write("Opções:");
+
+        }
+
+        public static void HandleMenuOption(short options)
+        {
+            switch (options)
+            {
+                case 0:
+                {
+                     Console.Clear();
+                     Environment.Exit(0);
+                     break;
+                }
+
+                case 1:
+                    Editor.Show();
+                    break;
+
+                case 2:
+                    System.Console.WriteLine("View");
+                    break;
+
+                default:
+                    Show();
+                    break;
+            }
 
         }
     }
