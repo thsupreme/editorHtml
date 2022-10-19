@@ -32,7 +32,7 @@ namespace editorHtml
             while (Console.ReadKey().Key != ConsoleKey.Escape);
 
             Console.WriteLine("------------------------------");
-            Console.WriteLine("-----  Deseja salvar o aquivo?  ----");
+            Console.WriteLine(" Deseja salvar o aquivo?");
         }
 
     }
