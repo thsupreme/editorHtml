@@ -1,4 +1,5 @@
-﻿using System;
+﻿using editor;
+using System;
 using System.Text;
 
 namespace editorHtml
@@ -16,7 +17,6 @@ namespace editorHtml
             Console.WriteLine("MODO EDITOR");
             Console.WriteLine("------------");
             Start();
-
         }
 
         public static void Start()
@@ -31,12 +31,9 @@ namespace editorHtml
             
             while (Console.ReadKey().Key != ConsoleKey.Escape);
 
-            Console.WriteLine("------------------------------");
-            Console.WriteLine(" Deseja salvar o aquivo?");
+            Console.WriteLine("------------------------");
+            Console.WriteLine("Deseja salvar o aquivo?");
+            Viewer.Show(file.ToString());
         }
-
     }
-
-
-
 }
